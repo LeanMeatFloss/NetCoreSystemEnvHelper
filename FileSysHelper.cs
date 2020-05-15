@@ -6,6 +6,10 @@ namespace NetCoreSystemEnvHelper
 {
     public static class FileSysHelper
     {
+        public static string GetAppHome ()
+        {
+            return GetHome (Assembly.GetEntryAssembly ().GetName ().Name);
+        }
         public static string GetHome (string relativePath)
         {
             string rootPath = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
